@@ -36,7 +36,6 @@ a img{
 
 #maincontent {
   background-color: #f3f3f3;
-  /* min-height: 100%; */
 }
 
 #footer {
@@ -95,7 +94,8 @@ nav h1 a {
     background-color: #eee;
     font-size: 1em;
     margin: 0;
-    width: calc(35% - 10px);
+    z-index: 1;
+    /* width: calc(35% - 10px); */
 }
 
 /* Display list items side by side */
@@ -112,7 +112,7 @@ nav h1 a {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #1c304a;
+    color: #00cfff;
     text-decoration: none;
 }
 
@@ -213,27 +213,43 @@ nav h1 a {
   text-transform: uppercase;
 }
 
+#reviews-list li > p:nth-child(3) {
+  color: #fff;
+  background-color: #046b99;
+  max-width: 30%;
+  text-align: center;
+}
+
+p:first-of-type {
+  font-weight: bold;
+}
+
 /* ====================== Restaurant Details ====================== */
 .inside header {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   width: 100%;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
 .inside #map-container {
-  background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: absolute;
-  right: 0;
-  top: 80px;
-  width: 100%;
+  /* background: blue none repeat scroll 0 0;
+  /* height: 87%;
+  position: absolute; */
+  /* right: 0; */
+  /* top: 80px; */
+  /* max-width: 100%;
+  margin: 0 auto; */
 }
 
 .inside #map {
-  background-color: #ccc;
+  /* background-color: #ccc;
   height: 100%;
-  width: 100%;
+  width: 100%; */
+
+  height: 400px;
+  max-width: 100%;
+  background-color: #ccc;
 }
 .inside #footer {
   bottom: 0;
@@ -282,7 +298,7 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 300px 0 30px;
+  padding: 30px 0 30px;
   padding-left: 0;
   padding-right: 0;
   width: 100%;
@@ -361,14 +377,42 @@ nav h1 a {
 }
 }
 
-@media only screen and (min-width: 421px) and (max-width: 700px) {
+@media only screen and (min-width: 421px) and (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
+  header,
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #map-container {
+    max-height: 250px;
+  }
+
+  nav h1 {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  img {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .filter-options {
+    display: grid;
+  }
+  
   #restaurants-list {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(370px, auto));
+  }
 }
-}
-
 /*
 centering shit!!!
 display: grid;

@@ -1,3 +1,5 @@
+var apKey = config.apiKey;
+
 let restaurants,
   neighborhoods,
   cuisines
