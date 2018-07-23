@@ -1,5 +1,5 @@
-var staticCacheName = 'precache-v2';
-var dynamicCacheName = 'dynamic-v2';
+var staticCacheName = 'precache-v3';
+var dynamicCacheName = 'dynamic-v3';
 
 
 self.addEventListener('install', function(event) {

@@ -1,11 +1,10 @@
 body {
-	width: 1020px;
+  width: 1020px;
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #1c304a;
   line-height: 1.5;
-  
 }
 
 :focus {
@@ -13,22 +12,22 @@ body {
 }
 
 ul, li {
-	font-size: 1em;
-	color: #333;
+  font-size: 1em;
+  color: #333;
 }
 
 a {
-	color: #1c304a;
-	text-decoration: none;
+  color: #1c304a;
+  text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: #046b99;
-	text-decoration: none;
+  color: #046b99;
+  text-decoration: none;
 }
 
-a img{
-	border: none 0px #fff;
+a img {
+  border: none 0px #fff;
 }
 
 #maincontent {
@@ -50,6 +49,7 @@ footer a {
 }
 
 /* ====================== Navigation ====================== */
+
 .skip-link {
   position: absolute;
   top: -40px;
@@ -88,40 +88,45 @@ nav h1 a {
 }
 
 #breadcrumb {
-    display: flex;
-    padding-left: 5px;
-    background-color: #eee;
-    font-size: 1em;
-    margin: 0;
-    top: 80px;
-    position: absolute;
-    z-index: 1;
+  display: flex;
+  padding-left: 5px;
+  background-color: #eee;
+  font-size: 1em;
+  margin: 0;
+  top: 80px;
+  position: absolute;
+  z-index: 1;
 }
 
 /* Display list items side by side */
+
 #breadcrumb li {
   display: inline;
 }
 
 /* Add a slash symbol (/) before/behind each list item */
+
 #breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
 }
 
 /* Add a color to all links inside the list */
+
 #breadcrumb li a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Add a color on mouse-over */
+
 #breadcrumb li a:hover {
-    color: #046b99;
-    text-decoration: underline;
+  color: #046b99;
+  text-decoration: underline;
 }
 
 /* ====================== Map ====================== */
+
 #map {
   height: 400px;
   max-width: 100%;
@@ -129,6 +134,7 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Filtering ====================== */
+
 .filter-options {
   display: flex;
   justify-content: space-around;
@@ -158,6 +164,7 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Listing ====================== */
+
 #restaurants-list {
   display: grid;
   grid-gap: 10px;
@@ -212,7 +219,7 @@ nav h1 a {
   text-transform: uppercase;
 }
 
-#reviews-list li > p:nth-child(3) {
+#reviews-list li>p:nth-child(3) {
   color: #fff;
   background-color: #046b99;
   max-width: 30%;
@@ -224,6 +231,7 @@ p:first-of-type {
 }
 
 /* ====================== Restaurant Details ====================== */
+
 .inside header {
   top: 0;
   width: 100%;
@@ -235,11 +243,11 @@ p:first-of-type {
 
 .inside #map {
   background-color: #ccc;
-
   height: 400px;
   max-width: 100%;
   background-color: #ccc;
 }
+
 .inside #footer {
   bottom: 0;
   max-width: 100%;
@@ -258,7 +266,7 @@ p:first-of-type {
 }
 
 #restaurant-img {
-	width: 100%;
+  width: 100%;
 }
 
 #restaurant-address {
@@ -337,31 +345,24 @@ p:first-of-type {
     max-width: 100%;
     font-family: 'Lato', sans-serif;
   }
-
-  header,
-  section {
+  header, section {
     display: flex;
     flex-direction: column;
   }
-
   #map-container {
     max-height: 250px;
   }
-
   nav h1 {
     font-size: 1.6rem;
     text-align: center;
   }
-
   img {
     max-width: 100%;
     overflow: hidden;
   }
-
   .filter-options {
     display: grid;
-}
-
+  }
   .filter-options select {
     width: 100%;
   }
@@ -371,28 +372,22 @@ p:first-of-type {
   body {
     max-width: 100%;
   }
-
-  header,
-  section {
+  header, section {
     display: flex;
     flex-direction: column;
   }
-
   #map-container {
     max-height: 250px;
   }
-
   nav h1 {
     font-size: 2rem;
     text-align: center;
     line-height: 1.2;
   }
-
   img {
     max-width: 100%;
     overflow: hidden;
   }
-
   #restaurants-list {
     display: grid;
     grid-gap: 10px;
@@ -400,30 +395,23 @@ p:first-of-type {
     height: auto;
   }
 }
-  
+
 @media only screen and (min-width: 769px) {
   #restaurant-container {
     display: grid;
     padding-bottom: 0;
-    grid-template-areas:
-      "name name"
-      "img hours"
-      "cuisine cuisine"
-      "address address";
+    grid-template-areas: "name name" "img hours" "cuisine cuisine" "address address";
   }
-
   #restaurant-name {
     grid-area: name;
     font-size: 2em;
   }
-
   #restaurant-img {
     grid-area: img;
-    padding:1px;
-    border:1px solid #1c304a;
+    padding: 1px;
+    border: 1px solid #1c304a;
     max-width: 99%;
   }
-
   #restaurant-hours {
     grid-area: hours;
     margin-top: 150px;
@@ -433,12 +421,10 @@ p:first-of-type {
     border-top: #1c304a;
     border-bottom: #1c304a;
   }
-
   #restaurant-address {
     grid-area: address;
     font-size: 1.8em;
   }
-
   #restaurant-cuizine {
     grid-area: cuizine;
     margin-bottom: 10px;
