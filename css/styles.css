@@ -1,9 +1,6 @@
-@charset "utf-8";
-
 body {
 	width: 1020px;
   margin: 0 auto;
-  font-family: 'Lato', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #1c304a;
@@ -77,8 +74,10 @@ nav {
 }
 
 nav h1 {
+  font-size: 3em;
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 nav h1 a {
@@ -94,8 +93,9 @@ nav h1 a {
     background-color: #eee;
     font-size: 1em;
     margin: 0;
+    top: 80px;
+    position: absolute;
     z-index: 1;
-    /* width: calc(35% - 10px); */
 }
 
 /* Display list items side by side */
@@ -112,7 +112,6 @@ nav h1 a {
 
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #00cfff;
     text-decoration: none;
 }
 
@@ -132,7 +131,8 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   display: flex;
-  width: 100%;
+  justify-content: space-around;
+  max-width: 100%;
   background-color: #1c304a;
   align-items: center;
 }
@@ -154,7 +154,7 @@ nav h1 a {
   letter-spacing: 0;
   margin: 10px;
   padding: 0 10px;
-  max-width: 100%;
+  width: 30%;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -171,7 +171,6 @@ nav h1 a {
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
-  /* font-family: Arial,sans-serif; */
   padding-bottom: 25px;
   text-align: center;
   max-width: 100%;
@@ -226,26 +225,16 @@ p:first-of-type {
 
 /* ====================== Restaurant Details ====================== */
 .inside header {
-  /* position: fixed; */
   top: 0;
   width: 100%;
-  /* z-index: 1000; */
 }
 
 .inside #map-container {
-  /* background: blue none repeat scroll 0 0;
-  /* height: 87%;
-  position: absolute; */
-  /* right: 0; */
-  /* top: 80px; */
-  /* max-width: 100%;
-  margin: 0 auto; */
+  background: blue none repeat scroll 0 0;
 }
 
 .inside #map {
-  /* background-color: #ccc;
-  height: 100%;
-  width: 100%; */
+  background-color: #ccc;
 
   height: 400px;
   max-width: 100%;
@@ -261,12 +250,11 @@ p:first-of-type {
   font-size: 1.4em;
   font-weight: 700;
   letter-spacing: 0;
-  margin-top: 25px;
   text-align: center;
   text-transform: uppercase;
   line-height: 1.1;
   padding: 10px 0 10px 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #restaurant-img {
@@ -287,7 +275,6 @@ p:first-of-type {
   background-color: #1c304a;
   color: #00cfff;
   font-size: 1em;
-  font-weight: 400;
   letter-spacing: 10px;
   margin: 0 0 20px;
   padding: 2px 0;
@@ -298,9 +285,7 @@ p:first-of-type {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 30px 0 30px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-bottom: 30px;
   width: 100%;
 }
 
@@ -317,15 +302,17 @@ p:first-of-type {
   display: inline-block;
   margin-top: 5px;
   margin-bottom: 0;
-  padding-left: 10px;
+  padding: 0 10px;
   background-color: #1c304a;
   max-width: 30%;
   border-radius: 0 20px 0 0;
 }
+
 #reviews-list {
   margin: 0;
   padding: 0;
 }
+
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #1c304a;
@@ -349,7 +336,6 @@ p:first-of-type {
   body {
     max-width: 100%;
     font-family: 'Lato', sans-serif;
-
   }
 
   header,
@@ -375,6 +361,10 @@ p:first-of-type {
   .filter-options {
     display: grid;
 }
+
+  .filter-options select {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 421px) and (max-width: 768px) {
@@ -403,19 +393,54 @@ p:first-of-type {
     overflow: hidden;
   }
 
-  .filter-options {
-    display: grid;
-  }
-  
   #restaurants-list {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(370px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(40%, auto));
+    height: auto;
   }
 }
-/*
-centering shit!!!
-display: grid;
-    width: 100%;
-    margin: 0;
-    place-items: center center; */
+  
+@media only screen and (min-width: 769px) {
+  #restaurant-container {
+    display: grid;
+    padding-bottom: 0;
+    grid-template-areas:
+      "name name"
+      "img hours"
+      "cuisine cuisine"
+      "address address";
+  }
+
+  #restaurant-name {
+    grid-area: name;
+    font-size: 2em;
+  }
+
+  #restaurant-img {
+    grid-area: img;
+    padding:1px;
+    border:1px solid #1c304a;
+    max-width: 99%;
+  }
+
+  #restaurant-hours {
+    grid-area: hours;
+    margin-top: 150px;
+    padding-left: 10px;
+    place-content: center;
+    background-color: #fff;
+    border-top: #1c304a;
+    border-bottom: #1c304a;
+  }
+
+  #restaurant-address {
+    grid-area: address;
+    font-size: 1.8em;
+  }
+
+  #restaurant-cuizine {
+    grid-area: cuizine;
+    margin-bottom: 10px;
+  }
+}

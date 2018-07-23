@@ -1,5 +1,5 @@
-var staticCacheName = 'precache-v7';
-var dynamicCacheName = 'dynamic-v7';
+var staticCacheName = 'precache-v2';
+var dynamicCacheName = 'dynamic-v2';
 
 
 self.addEventListener('install', function(event) {
@@ -33,7 +33,7 @@ self.addEventListener('activate', function(event) {
     event.waitUntil(caches.keys().then(function(keylist) {
         return Promise.all(keylist.map(function(key) {
             if (key !== staticCacheName && key !== dynamicCacheName) {
-                console.log('[Service Worker] Rmoving old cache.', key);
+                console.log('[Service Worker] Rmoving old cache...', key);
                 return caches.delete(key);
             }
         }))
